@@ -1,19 +1,19 @@
 class Peakmon < Formula
   desc "Native, lightweight macOS menu-bar system monitor"
   homepage "https://github.com/crafcat7/Peakmon"
-  url "https://github.com/crafcat7/Peakmon/releases/download/20260625/Peakmon.app.zip"
-  sha256 "3ded23ad91a81cc10cb452b7f1d93f371f0fdfde97b287a8cecaa5f0abf261df"
+  url "https://github.com/crafcat7/Peakmon/releases/download/20260712/Peakmon.app.zip"
+  version "1.5.0"
+  sha256 "a96bca0831953f568145625e58cc5fc704ab5b401cd6d63cb97f1690e1977eb9"
   license "Apache-2.0"
-  version "1.4.0"
 
-  depends_on :macos => :sonoma
+  depends_on macos: :sonoma
 
   def install
     # Homebrew's zip unpack strategy strips the single top-level
     # directory, so the working directory IS the unpacked
     # `Peakmon.app` bundle. Copy its contents into the Cellar
     # under a fresh `Peakmon.app` directory.
-    (prefix/"Peakmon.app").install Dir["Contents"]
+    (prefix/"Peakmon.app").install "Contents"
   end
 
   def caveats
@@ -35,7 +35,7 @@ class Peakmon < Formula
   end
 
   test do
-    assert_predicate prefix/"Peakmon.app", :exist?
+    assert_path_exists prefix/"Peakmon.app"
     assert_predicate prefix/"Peakmon.app/Contents/MacOS/Peakmon", :executable?
   end
 end
