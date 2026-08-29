@@ -1,9 +1,9 @@
 class Peakmon < Formula
   desc "Native, lightweight macOS menu-bar system monitor"
   homepage "https://github.com/crafcat7/Peakmon"
-  url "https://github.com/crafcat7/Peakmon/releases/download/20260803/Peakmon.app.zip"
-  version "1.6.1"
-  sha256 "e861a133e822a0dab0a18369a0ee7c6a233282f4159a9b1ebfe34ce59f2f65b5"
+  url "https://github.com/crafcat7/Peakmon/releases/download/20260829/Peakmon.app.zip"
+  version "1.6.2"
+  sha256 "30ff9556f9d143b1fce87184b7a5b8d07226ce00945c686f41276d95cefb3f2a"
   license "Apache-2.0"
 
   depends_on macos: :sonoma
